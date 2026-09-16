@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230B0B0C'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='white' stroke-width='2.5'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EPE%3C/text%3E%3Crect x='16' y='30' width='32' height='3.5' fill='%23E11F26' transform='rotate(-38 32 32)'/%3E%3Ccircle cx='47' cy='36.5' r='1.8' fill='%23E11F26' transform='rotate(-38 32 32)'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Ccircle cx='90' cy='90' r='90' fill='%230B0B0C'/%3E%3Ccircle cx='90' cy='90' r='74' fill='none' stroke='white' stroke-width='3'/%3E%3Ctext x='90' y='114' font-family='Georgia,serif' font-weight='700' font-size='70' fill='white' text-anchor='middle'%3EPE%3C/text%3E%3Crect x='42' y='84' width='96' height='10' fill='%23E11F26' transform='rotate(-38 90 90)'/%3E%3Ccircle cx='128' cy='104' r='5' fill='%23E11F26' transform='rotate(-38 90 90)'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0A1A3C">
+<title>PKE — Premium Kitchen Equipment</title>
+<meta property="og:title" content="PKE — Premium Kitchen Equipment">
+<meta property="og:description" content="Equipping your dream kitchen — commercial refrigeration, cooking lines, and prep equipment, spec'd by chefs and backed by a two-year parts warranty.">
+<meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23050E22'/%3E%3Crect width='1200' height='360' fill='%230C1F4C'/%3E%3Ccircle cx='600' cy='250' r='115' fill='%230B0B0C' stroke='rgba(255,255,255,.4)' stroke-width='2'/%3E%3Ctext x='600' y='270' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='74' fill='white'%3EPE%3C/text%3E%3Crect x='515' y='235' width='170' height='15' fill='%23E11F26' transform='rotate(-32 600 250)'/%3E%3Ccircle cx='695' cy='278' r='7' fill='%23E11F26' transform='rotate(-32 600 250)'/%3E%3Ccircle cx='718' cy='287' r='4.5' fill='%23E11F26' transform='rotate(-32 600 250)'/%3E%3Ctext x='600' y='430' text-anchor='middle' font-family='Arial,sans-serif' font-weight='900' font-size='44' letter-spacing='4' fill='white'%3EPREMIUM KITCHEN EQUIPMENT%3C/text%3E%3Ctext x='600' y='474' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' letter-spacing='3' fill='%23E11F26'%3EEQUIPPING YOUR DREAM KITCHEN%3C/text%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#050E22;font-family:Archivo,system-ui,sans-serif;color:#0A1A3C;-webkit-font-smoothing:antialiased}
+  a{color:#E11F26;text-decoration:none}
+  a:hover{color:#B8141A}
+  ::selection{background:#E11F26;color:#fff}
+  @keyframes pkeRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @keyframes pkeSweep{0%{transform:translateX(-120%)}100%{transform:translateX(220%)}}
+  html{scroll-behavior:smooth}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#050E22">
+
+  <!-- ===== HEADER ===== -->
+  <header style="{{ headerStyle }}">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px);display:flex;align-items:center;gap:32px;height:100%">
+      <div style="display:flex;align-items:center;gap:14px;cursor:pointer" onClick="{{ goHome }}">
+        <div style="width:46px;height:46px;border-radius:50%;overflow:hidden;flex:none;background:#0B0B0C;box-shadow:0 0 0 2px rgba(225,31,38,.9),0 6px 18px rgba(0,0,0,.35)">
+          <svg viewBox="0 0 100 100" width="100%" height="100%" style="display:block" role="img" aria-label="PKE badge">
+            <circle cx="50" cy="50" r="50" fill="#0B0B0C"></circle>
+            <circle cx="50" cy="50" r="43" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"></circle>
+            <path id="pkeRingHead" d="M 35.64 89.47 A 42 42 0 1 1 64.36 89.47" fill="none"></path>
+            <text font-family="Archivo,sans-serif" font-weight="700" font-size="6.4" letter-spacing="1.6" fill="#fff">
+              <textPath href="#pkeRingHead" startOffset="50%" text-anchor="middle" textLength="205" lengthAdjust="spacingAndGlyphs">PREMIUM KITCHEN EQUIPMENT</textPath>
+            </text>
+            <text x="29" y="64" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="900" font-size="36" fill="#fff">P</text>
+            <text x="73" y="64" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="900" font-size="36" fill="#fff">E</text>
+            <polygon points="56,31 41,58 49,58 44,73 65,45 53,45 59,31" fill="#E11F26"></polygon>
+          </svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <span style="font-family:'Archivo Black',sans-serif;font-size:17px;letter-spacing:.14em;color:#fff;line-height:1">PKE</span>
+          <sc-if value="{{ showLockupSub }}" hint-placeholder-val="{{ true }}">
+            <span style="display:block;white-space:nowrap;font:600 8.5px/1 Archivo,sans-serif;letter-spacing:.24em;color:rgba(255,255,255,.62)">PREMIUM KITCHEN EQUIPMENT</span>
+          </sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;gap:4px;margin-left:8px">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="4">
+          <a href="{{ link.href }}" style="position:relative;padding:10px 14px;white-space:nowrap;font:600 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.78);border-radius:6px;transition:color .18s,background .18s" style-hover="color:#fff;background:rgba(255,255,255,.08)">{{ link.label }}</a>
+        </sc-for>
+      </nav>
+      </sc-if>
+      <div style="flex:1;min-width:0"></div>
+      <div style="display:flex;align-items:center;gap:10px;flex:none">
+        <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.06);transition:border-color .18s,box-shadow .18s" style-focus="border-color:#E11F26;box-shadow:0 0 0 3px rgba(225,31,38,.28)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+          <input placeholder="Search equipment" style="width:130px;min-width:0;border:0;outline:0;background:transparent;font:500 13px Archivo,sans-serif;color:#fff">
+        </div>
+        </sc-if>
+        <sc-if value="{{ compact }}" hint-placeholder-val="{{ false }}">
+        <button aria-label="Search" style="width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.06);cursor:pointer;transition:background .18s" style-hover="background:rgba(255,255,255,.14)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+        </button>
+        <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.06);cursor:pointer;transition:background .18s" style-hover="background:rgba(255,255,255,.14)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+        </sc-if>
+        <button style="position:relative;display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;white-space:nowrap;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;font:600 13px Archivo,sans-serif;cursor:pointer;transition:background .18s" style-hover="background:rgba(255,255,255,.14)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h2l2.2 10.2h9.4L20 8H7"></path><circle cx="10" cy="19" r="1.4"></circle><circle cx="17" cy="19" r="1.4"></circle></svg>
+          Quote
+          <span style="min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#E11F26;color:#fff;font:700 11px/18px Archivo,sans-serif;text-align:center">{{ cart }}</span>
+        </button>
+        <button onClick="{{ goShop }}" style="height:40px;padding:0 20px;flex:none;white-space:nowrap;border:0;border-radius:8px;background:#E11F26;color:#fff;font:700 13px/1 Archivo,sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 20px rgba(225,31,38,.35);transition:transform .16s,background .16s,box-shadow .16s" style-hover="background:#F5333A;transform:translateY(-1px);box-shadow:0 12px 26px rgba(225,31,38,.45)" style-active="transform:translateY(1px);box-shadow:0 4px 10px rgba(225,31,38,.3)">Get a Quote</button>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="background:rgba(5,14,34,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 16px 40px rgba(0,0,0,.5)">
+        <div style="max-width:1240px;margin:0 auto;padding:14px clamp(18px,4vw,32px) 20px;display:flex;flex-direction:column;gap:4px">
+          <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="4">
+            <a href="{{ link.href }}" style="padding:13px 12px;border-radius:8px;font:700 14px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:background .16s,color .16s" style-hover="background:rgba(255,255,255,.08);color:#fff">{{ link.label }}</a>
+          </sc-for>
+          <div style="display:flex;align-items:center;gap:8px;height:44px;margin-top:8px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(255,255,255,.06)" style-focus="border-color:#E11F26;box-shadow:0 0 0 3px rgba(225,31,38,.28)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+            <input placeholder="Search equipment" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font:500 14px Archivo,sans-serif;color:#fff">
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- ===================== HOME ===================== -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main style="padding-top:76px">
+
+    <!-- HERO -->
+    <section style="position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% -10%,#1B3B86 0%,#0C1F4C 42%,#050E22 100%)">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent)"></div>
+      <div style="position:absolute;top:-220px;left:50%;width:900px;height:760px;transform:translateX(-50%);background:conic-gradient(from 160deg at 50% 0%,transparent 0deg,rgba(255,255,255,.14) 20deg,transparent 42deg);filter:blur(6px);pointer-events:none"></div>
+      <div style="position:relative;max-width:1240px;margin:0 auto;padding:78px clamp(18px,4vw,32px) 0;text-align:center">
+        <h1 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(34px,7.4vw,76px);line-height:.96;letter-spacing:-.025em;color:#fff;text-wrap:balance">Equipping Your<br>Dream <span style="position:relative;display:inline-block"><span style="position:relative;z-index:1">Kitchen</span><span style="position:absolute;left:-8px;right:-8px;bottom:6px;height:26px;background:#E11F26;z-index:0;transform:skewX(-8deg);box-shadow:0 0 40px rgba(225,31,38,.7)"></span></span></h1>
+        <p style="max-width:620px;margin:22px auto 0;font:400 17px/1.6 Archivo,sans-serif;color:rgba(255,255,255,.72)">Commercial-grade refrigeration, cooking lines, and prep equipment built for volume. Spec'd by chefs, backed by a two-year parts warranty.</p>
+        <div style="display:flex;justify-content:center;gap:14px;margin-top:32px">
+          <button onClick="{{ goShop }}" style="height:54px;padding:0 30px;border:0;border-radius:10px;background:#E11F26;color:#fff;font:700 14px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px rgba(225,31,38,.4);transition:transform .16s,background .16s" style-hover="background:#F5333A;transform:translateY(-2px)" style-active="transform:translateY(1px)">Shop equipment</button>
+          <button style="height:54px;padding:0 30px;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;font:700 14px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .18s,border-color .18s" style-hover="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.55)">Talk to a specialist</button>
+        </div>
+        <!-- product lineup stage -->
+        <div style="position:relative;margin:56px auto 0;max-width:1100px">
+          <div style="position:absolute;left:50%;bottom:28px;width:940px;height:200px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(120,170,255,.35),transparent 70%);filter:blur(20px)"></div>
+          <div style="position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(7px,1.6vw,18px);align-items:end">
+            <sc-for list="{{ heroLineup }}" as="item" hint-placeholder-count="5">
+              <div style="animation:pkeRise .7s cubic-bezier(.2,.8,.2,1) both">
+                <div style="height:{{ item.h }};border-radius:12px 12px 4px 4px;background:repeating-linear-gradient(135deg,#dfe5ef 0 10px,#cdd6e4 10px 20px);border:1px solid rgba(255,255,255,.5);box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.9);display:grid;place-items:center;text-align:center;padding:10px">
+                  <span style="font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.06em;color:#5d6b80">{{ item.label }}</span>
+                </div>
+                <div style="height:46px;margin-top:2px;border-radius:0 0 12px 12px;background:linear-gradient(to bottom,rgba(223,229,239,.35),transparent);transform:scaleY(-1);opacity:.5"></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="position:relative;display:flex;justify-content:center;gap:56px;padding:12px clamp(18px,4vw,32px) 40px;flex-wrap:wrap">
+        <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
+          <div style="text-align:center">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:26px;color:#fff">{{ s.n }}</div>
+            <div style="font:600 10px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:6px">{{ s.l }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ showAnn }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;left:32px;bottom:150px;max-width:190px;padding:10px 12px;border:1px dashed rgba(225,31,38,.8);border-radius:8px;background:rgba(5,14,34,.8);font:500 10.5px/1.45 ui-monospace,Menlo,monospace;color:#FF9FA3">Scroll-reveal: lineup rises 22px, staggered 70ms, cubic-bezier(.2,.8,.2,1)</div>
+      </sc-if>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories" style="background:#fff;padding:86px 0">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px)">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px">
+          <div>
+            <div style="font:700 11px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#E11F26">Shop by category</div>
+            <h2 style="margin:12px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(27px,4.2vw,40px);line-height:1.04;letter-spacing:-.02em;color:#0A1A3C">Everything behind the line</h2>
+          </div>
+          <a href="#categories" style="font:700 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#0A1A3C;border-bottom:2px solid #E11F26;padding-bottom:4px">All 148 products →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:20px">
+          <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
+            <div onClick="{{ cat.open }}" style="position:relative;overflow:hidden;cursor:pointer;border:1px solid #E6E9EF;border-radius:14px;background:linear-gradient(170deg,#F7F9FC,#E9EDF4);padding:22px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,border-color .22s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(10,26,60,.16);border-color:#0A1A3C">
+              <div style="width:52px;height:52px;border-radius:12px;background:#0A1A3C;display:grid;place-items:center;box-shadow:0 8px 18px rgba(10,26,60,.25)">
+                <div style="width:22px;height:22px;border:2px solid #fff;border-radius:{{ cat.iconRadius }}"></div>
+              </div>
+              <div>
+                <div style="font-family:'Archivo Black',sans-serif;font-size:19px;line-height:1.15;color:#0A1A3C">{{ cat.name }}</div>
+                <div style="margin-top:8px;font:400 13px/1.5 Archivo,sans-serif;color:#5d6b80">{{ cat.blurb }}</div>
+                <div style="margin-top:14px;font:700 11px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E11F26">{{ cat.count }} SKUs →</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section style="background:linear-gradient(180deg,#0A1A3C,#050E22);padding:86px 0">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px)">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px">
+          <div>
+            <div style="font:700 11px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#FF9F1C">Hot right now</div>
+            <h2 style="margin:12px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(27px,4.2vw,40px);line-height:1.04;letter-spacing:-.02em;color:#fff">Featured equipment</h2>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button style="width:44px;height:44px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;cursor:pointer;transition:background .18s" style-hover="background:rgba(255,255,255,.16)">←</button>
+            <button style="width:44px;height:44px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;cursor:pointer;transition:background .18s" style-hover="background:rgba(255,255,255,.16)">→</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,232px),1fr));gap:20px">
+          <sc-for list="{{ featured }}" as="p" hint-placeholder-count="4">
+            <div onClick="{{ p.open }}" style="cursor:pointer;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s" style-hover="transform:translateY(-8px);box-shadow:0 28px 54px rgba(0,0,0,.5)">
+              <div style="position:relative;height:198px;overflow:hidden;background:repeating-linear-gradient(135deg,#F2F5F9 0 11px,#E5EAF2 11px 22px);display:grid;place-items:center">
+                <span style="font:500 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.05em;color:#7b8798;text-align:center;padding:0 16px">{{ p.shot }}</span>
+                <span style="position:absolute;top:12px;left:12px;padding:5px 10px;border-radius:5px;background:#E11F26;color:#fff;font:700 10px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase">{{ p.badge }}</span>
+              </div>
+              <div style="padding:18px 18px 20px;border-top:1px solid #E6E9EF">
+                <div style="font:600 10px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8b97a8">{{ p.brand }}</div>
+                <div style="margin-top:8px;font:700 16px/1.28 Archivo,sans-serif;color:#0A1A3C">{{ p.name }}</div>
+                <div style="margin-top:6px;font:400 12.5px/1.45 Archivo,sans-serif;color:#5d6b80">{{ p.spec }}</div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px">
+                  <div>
+                    <div style="font-family:'Archivo Black',sans-serif;font-size:20px;color:#E11F26">{{ p.price }}</div>
+                    <div style="font:400 11px/1 Archivo,sans-serif;color:#8b97a8;text-decoration:line-through;margin-top:4px">{{ p.was }}</div>
+                  </div>
+                  <button style="height:40px;padding:0 16px;border:1.5px solid #0A1A3C;border-radius:8px;background:#fff;color:#0A1A3C;font:700 12px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .18s,color .18s" style-hover="background:#0A1A3C;color:#fff">Add to quote</button>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ showAnn }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:20px;display:inline-block;padding:10px 12px;border:1px dashed rgba(225,31,38,.8);border-radius:8px;font:500 10.5px/1.45 ui-monospace,Menlo,monospace;color:#FF9FA3">Card hover: −8px lift, 54px shadow, image scales 1.06 · 220ms</div>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- WHY PKE -->
+    <section style="background:#fff;padding:86px 0">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px)">
+        <div style="text-align:center;max-width:620px;margin:0 auto 40px">
+          <div style="font:700 11px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#E11F26">Why PKE</div>
+          <h2 style="margin:12px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(27px,4.2vw,40px);line-height:1.04;letter-spacing:-.02em;color:#0A1A3C">Downtime is what costs you money</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:20px">
+          <sc-for list="{{ trust }}" as="t" hint-placeholder-count="4">
+            <div style="padding:26px 22px;border:1px solid #E6E9EF;border-radius:14px;background:#F8FAFC;transition:border-color .2s,transform .2s" style-hover="border-color:#E11F26;transform:translateY(-4px)">
+              <div style="width:46px;height:46px;border-radius:50%;border:2px solid #0A1A3C;display:grid;place-items:center">
+                <div style="width:16px;height:16px;border:2px solid #E11F26;border-radius:{{ t.iconRadius }}"></div>
+              </div>
+              <div style="margin-top:18px;font-family:'Archivo Black',sans-serif;font-size:17px;color:#0A1A3C">{{ t.title }}</div>
+              <div style="margin-top:8px;font:400 13.5px/1.55 Archivo,sans-serif;color:#5d6b80">{{ t.body }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL STRIP -->
+    <section style="background:#0A1A3C;padding:76px 0;overflow:hidden">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px);display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px">
+        <h2 style="margin:0;font-family:'Archivo Black',sans-serif;font-size:clamp(25px,3.8vw,34px);line-height:1.06;color:#fff">@premiumkitchenequipment</h2>
+        <a href="#categories" style="font:700 12px/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff;border-bottom:2px solid #E11F26;padding-bottom:4px">Follow us</a>
+      </div>
+      <div style="display:flex;gap:16px;padding:0 clamp(18px,4vw,32px);overflow-x:auto">
+        <sc-for list="{{ social }}" as="s" hint-placeholder-count="5">
+          <div style="flex:none;width:250px;aspect-ratio:4/5;border-radius:12px;overflow:hidden;position:relative;background:{{ s.bg }};padding:22px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;transition:transform .22s" style-hover="transform:translateY(-6px) rotate(-1deg)">
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 12px,transparent 12px 24px)"></div>
+            <div style="position:absolute;top:14px;right:14px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;font:700 9px/1 Georgia,serif;color:#0A1A3C">PE</div>
+            <div style="position:relative;font-family:'Archivo Black',sans-serif;font-size:25px;line-height:1.04;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4)">{{ s.line }}</div>
+            <div style="position:relative;margin-top:10px;font:600 11px/1.4 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.75)">{{ s.sub }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- MOBILE NOTES -->
+    <sc-if value="{{ showMobile }}" hint-placeholder-val="{{ true }}">
+    <section style="background:#050E22;padding:80px 0;border-top:1px solid rgba(255,255,255,.08)">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px)">
+        <div style="font:700 11px/1 Archivo,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#FF9F1C">Responsive behaviour</div>
+        <h2 style="margin:12px 0 30px;font-family:'Archivo Black',sans-serif;font-size:clamp(25px,3.8vw,34px);color:#fff">Tablet &amp; mobile adaptation</h2>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <sc-for list="{{ mobiles }}" as="m" hint-placeholder-count="3">
+            <div style="flex:none;width:300px">
+              <div style="border:8px solid #11182B;border-radius:34px;overflow:hidden;background:#fff;box-shadow:0 26px 60px rgba(0,0,0,.55)">
+                <div style="height:26px;background:#0A1A3C;display:grid;place-items:center"><div style="width:70px;height:5px;border-radius:3px;background:rgba(255,255,255,.35)"></div></div>
+                <div style="height:420px;background:{{ m.bg }};padding:16px;display:flex;flex-direction:column;gap:10px">
+                  <sc-for list="{{ m.rows }}" as="r" hint-placeholder-count="4">
+                    <div style="height:{{ r.h }};border-radius:8px;background:{{ r.bg }};display:flex;align-items:center;padding:0 12px;font:600 11px/1.3 Archivo,sans-serif;color:{{ r.fg }}">{{ r.label }}</div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="margin-top:14px;font:700 13px/1 Archivo,sans-serif;color:#fff">{{ m.title }}</div>
+              <div style="margin-top:8px;font:400 12.5px/1.55 Archivo,sans-serif;color:rgba(255,255,255,.6)">{{ m.note }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+  </main>
+  </sc-if>
+
+  <!-- ===================== LISTING ===================== -->
+  <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+  <main style="padding-top:76px;background:#F8FAFC;min-height:100vh">
+    <div style="background:linear-gradient(120deg,#0A1A3C,#132E6B);padding:34px 0 40px">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px)">
+        <div style="display:flex;align-items:center;gap:8px;font:500 12px/1 Archivo,sans-serif;color:rgba(255,255,255,.6)">
+          <a href="#" onClick="{{ goHome }}" style="color:rgba(255,255,255,.8)">Home</a><span>/</span><a href="#" onClick="{{ goShop }}" style="color:rgba(255,255,255,.8)">Shop</a><span>/</span><span style="color:#fff;font-weight:700">Refrigeration</span>
+        </div>
+        <h1 style="margin:16px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,5vw,44px);letter-spacing:-.02em;color:#fff">Refrigeration</h1>
+        <p style="margin:10px 0 0;max-width:560px;font:400 15px/1.6 Archivo,sans-serif;color:rgba(255,255,255,.7)">Chillers, freezers, and display cases rated for continuous service in tropical ambient conditions.</p>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:0 auto;padding:32px clamp(18px,4vw,32px) 90px;display:grid;grid-template-columns:{{ listCols }};gap:clamp(20px,3vw,32px);align-items:start">
+      <!-- FILTERS -->
+      <aside style="position:sticky;top:96px;min-width:0;background:#fff;border:1px solid #E6E9EF;border-radius:14px;padding:22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <span style="font-family:'Archivo Black',sans-serif;font-size:15px;color:#0A1A3C">Filters</span>
+          <button onClick="{{ clearFilters }}" style="border:0;background:none;padding:0;font:600 11px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#E11F26;cursor:pointer">Clear all</button>
+        </div>
+        <div style="font:700 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#8b97a8;margin-bottom:12px">Brand</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-bottom:24px">
+          <sc-for list="{{ brandFilters }}" as="f" hint-placeholder-count="4">
+            <label onClick="{{ f.toggle }}" style="display:flex;align-items:center;gap:10px;padding:7px 8px;margin:0 -8px;border-radius:7px;cursor:pointer;transition:background .16s" style-hover="background:#F2F5F9">
+              <span style="width:18px;height:18px;flex:none;border-radius:5px;border:2px solid {{ f.border }};background:{{ f.fill }};display:grid;place-items:center;transition:all .16s">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="opacity:{{ f.tick }}"><path d="M4 13l5 5L20 6"></path></svg>
+              </span>
+              <span style="flex:1;font:500 13.5px/1 Archivo,sans-serif;color:#0A1A3C">{{ f.label }}</span>
+              <span style="font:500 12px/1 Archivo,sans-serif;color:#8b97a8">{{ f.count }}</span>
+            </label>
+          </sc-for>
+        </div>
+        <div style="font:700 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#8b97a8;margin-bottom:14px">Price range</div>
+        <div style="margin-bottom:8px;font:700 14px/1 Archivo,sans-serif;color:#0A1A3C">₱25,000 – {{ priceLabel }}</div>
+        <div onClick="{{ bumpPrice }}" style="position:relative;height:6px;border-radius:3px;background:#E6E9EF;cursor:pointer;margin:14px 0 26px">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:{{ pricePct }};border-radius:3px;background:#E11F26"></div>
+          <div style="position:absolute;top:50%;left:{{ pricePct }};width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:#fff;border:3px solid #E11F26;box-shadow:0 4px 10px rgba(10,26,60,.25)"></div>
+        </div>
+        <div style="font:700 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#8b97a8;margin-bottom:12px">Power type</div>
+        <div style="display:flex;gap:8px;margin-bottom:24px">
+          <sc-for list="{{ powerFilters }}" as="p" hint-placeholder-count="2">
+            <button onClick="{{ p.toggle }}" style="flex:1;height:38px;border:1.5px solid {{ p.border }};border-radius:8px;background:{{ p.bg }};color:{{ p.fg }};font:600 12.5px/1 Archivo,sans-serif;cursor:pointer;transition:all .16s">{{ p.label }}</button>
+          </sc-for>
+        </div>
+        <div style="font:700 10.5px/1 Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#8b97a8;margin-bottom:12px">Capacity</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px">
+          <sc-for list="{{ capFilters }}" as="c" hint-placeholder-count="4">
+            <span style="padding:7px 12px;border:1px solid #E6E9EF;border-radius:100px;font:500 12px/1 Archivo,sans-serif;color:#5d6b80;cursor:pointer;transition:all .16s" style-hover="border-color:#0A1A3C;color:#0A1A3C">{{ c }}</span>
+          </sc-for>
+        </div>
+        <button onClick="{{ toggleEmpty }}" style="width:100%;height:38px;border:1px dashed #E11F26;border-radius:8px;background:rgba(225,31,38,.06);color:#E11F26;font:600 11.5px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer">{{ emptyToggleLabel }}</button>
+      </aside>
+
+      <!-- GRID -->
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px">
+          <div style="font:500 13.5px/1 Archivo,sans-serif;color:#5d6b80">Showing <strong style="color:#0A1A3C">{{ resultCount }}</strong> of 34 products</div>
+          <div style="position:relative">
+            <button onClick="{{ toggleSort }}" style="display:flex;align-items:center;gap:10px;height:42px;padding:0 16px;white-space:nowrap;border:1px solid #E6E9EF;border-radius:9px;background:#fff;font:600 13px/1 Archivo,sans-serif;color:#0A1A3C;cursor:pointer;transition:border-color .16s" style-hover="border-color:#0A1A3C">
+              <span style="color:#8b97a8;font-weight:500">Sort:</span>{{ sort }}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <sc-if value="{{ sortOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;right:0;top:48px;z-index:20;width:200px;padding:6px;background:#fff;border:1px solid #E6E9EF;border-radius:10px;box-shadow:0 18px 40px rgba(10,26,60,.18)">
+                <sc-for list="{{ sortOptions }}" as="o" hint-placeholder-count="4">
+                  <div onClick="{{ o.pick }}" style="padding:10px 12px;border-radius:7px;font:{{ o.font }} 13px/1 Archivo,sans-serif;color:{{ o.fg }};background:{{ o.bg }};cursor:pointer;transition:background .14s" style-hover="background:#F2F5F9">{{ o.label }}</div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+
+        <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:60px clamp(18px,4vw,32px);text-align:center;background:#fff;border:1px solid #E6E9EF;border-radius:14px">
+            <div style="width:92px;height:92px;margin:0 auto;border-radius:50%;background:#0A1A3C;display:grid;place-items:center;box-shadow:0 16px 36px rgba(10,26,60,.25)">
+              <div style="width:34px;height:34px;border:3px solid #E11F26;border-radius:6px;transform:rotate(45deg)"></div>
+            </div>
+            <h3 style="margin:24px 0 0;font-family:'Archivo Black',sans-serif;font-size:26px;color:#0A1A3C">Nothing on this shelf</h3>
+            <p style="margin:10px auto 0;max-width:380px;font:400 14.5px/1.6 Archivo,sans-serif;color:#5d6b80">No refrigeration units match that combination. Widen the price range, or let our team spec something for you.</p>
+            <div style="display:flex;justify-content:center;gap:12px;margin-top:24px">
+              <button onClick="{{ clearFilters }}" style="height:46px;padding:0 22px;border:0;border-radius:9px;background:#E11F26;color:#fff;font:700 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .16s" style-hover="background:#F5333A">Reset filters</button>
+              <button style="height:46px;padding:0 22px;border:1.5px solid #0A1A3C;border-radius:9px;background:#fff;color:#0A1A3C;font:700 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .16s,color .16s" style-hover="background:#0A1A3C;color:#fff">Request a spec</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:20px">
+            <sc-for list="{{ listing }}" as="p" hint-placeholder-count="6">
+              <div onClick="{{ p.open }}" style="cursor:pointer;background:#fff;border:1px solid #E6E9EF;border-radius:14px;overflow:hidden;transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,border-color .22s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(10,26,60,.16);border-color:#CBD5E4">
+                <div style="position:relative;height:186px;background:repeating-linear-gradient(135deg,#F2F5F9 0 11px,#E5EAF2 11px 22px);display:grid;place-items:center">
+                  <span style="font:500 10px/1.5 ui-monospace,Menlo,monospace;color:#7b8798;text-align:center;padding:0 14px">{{ p.shot }}</span>
+                  <sc-if value="{{ p.badge }}" hint-placeholder-val="{{ true }}">
+                    <span style="position:absolute;top:12px;left:12px;padding:5px 10px;border-radius:5px;background:#E11F26;color:#fff;font:700 10px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase">{{ p.badge }}</span>
+                  </sc-if>
+                </div>
+                <div style="padding:16px 16px 18px;border-top:1px solid #E6E9EF">
+                  <div style="font:600 10px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8b97a8">{{ p.brand }}</div>
+                  <div style="margin-top:8px;font:700 15px/1.3 Archivo,sans-serif;color:#0A1A3C">{{ p.name }}</div>
+                  <div style="margin-top:6px;font:400 12px/1.45 Archivo,sans-serif;color:#5d6b80">{{ p.spec }}</div>
+                  <div style="margin-top:14px;font-family:'Archivo Black',sans-serif;font-size:18px;color:#E11F26">{{ p.price }}</div>
+                  <button onClick="{{ addToQuote }}" style="width:100%;height:42px;margin-top:14px;border:1.5px solid #0A1A3C;border-radius:8px;background:#fff;color:#0A1A3C;font:700 12px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .16s,color .16s" style-hover="background:#0A1A3C;color:#fff" style-active="background:#E11F26;border-color:#E11F26;color:#fff">Add to quote</button>
+                </div>
+              </div>
+            </sc-for>
+            <div style="background:#fff;border:1px dashed #CBD5E4;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px;justify-content:center">
+              <div style="height:14px;width:60%;border-radius:4px;background:linear-gradient(90deg,#EEF2F7,#E2E8F0,#EEF2F7);position:relative;overflow:hidden"><span style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);animation:pkeSweep 1.4s linear infinite"></span></div>
+              <div style="height:120px;border-radius:8px;background:#F2F5F9;position:relative;overflow:hidden"><span style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);animation:pkeSweep 1.4s linear infinite"></span></div>
+              <div style="font:500 10.5px/1.4 ui-monospace,Menlo,monospace;color:#8b97a8">loading skeleton — next page</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:34px">
+            <button style="height:50px;padding:0 34px;border:2px solid #0A1A3C;border-radius:10px;background:#fff;color:#0A1A3C;font:700 13px/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .18s,color .18s" style-hover="background:#0A1A3C;color:#fff">Load 12 more</button>
+            <div style="display:flex;align-items:center;gap:6px">
+              <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="4">
+                <span style="min-width:36px;height:36px;padding:0 10px;border-radius:8px;background:{{ pg.bg }};color:{{ pg.fg }};border:1px solid {{ pg.border }};font:600 13px/34px Archivo,sans-serif;text-align:center;cursor:pointer">{{ pg.label }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===================== DETAIL ===================== -->
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <main style="padding-top:76px;background:#fff">
+    <div style="background:#F8FAFC;border-bottom:1px solid #E6E9EF">
+      <div style="max-width:1240px;margin:0 auto;padding:16px clamp(18px,4vw,32px);display:flex;align-items:center;gap:8px;font:500 12px/1 Archivo,sans-serif;color:#8b97a8">
+        <a href="#" onClick="{{ goHome }}" style="color:#5d6b80">Home</a><span>/</span><a href="#" onClick="{{ goShop }}" style="color:#5d6b80">Shop</a><span>/</span><a href="#" onClick="{{ goShop }}" style="color:#5d6b80">Refrigeration</a><span>/</span><span style="color:#0A1A3C;font-weight:700">2-Door Reach-In Chiller</span>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:0 auto;padding:40px clamp(18px,4vw,32px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(28px,4vw,48px);align-items:start">
+      <!-- GALLERY -->
+      <div>
+        <div style="position:relative;overflow:hidden;border:1px solid #E6E9EF;border-radius:16px;aspect-ratio:4/3;background:radial-gradient(70% 70% at 50% 35%,#FFFFFF,#E9EDF4);display:grid;place-items:center">
+          <div style="width:72%;height:76%;border-radius:10px;background:repeating-linear-gradient(135deg,#E8EDF5 0 12px,#DCE3ED 12px 24px);border:1px solid rgba(255,255,255,.8);box-shadow:0 30px 50px rgba(10,26,60,.18);display:grid;place-items:center;transition:transform .4s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.18)">
+            <span style="font:500 11px/1.6 ui-monospace,Menlo,monospace;color:#6d7b8e;text-align:center">{{ galleryLabel }}</span>
+          </div>
+          <span style="position:absolute;top:14px;left:14px;padding:6px 11px;border-radius:5px;background:#E11F26;color:#fff;font:700 10px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase">Best seller</span>
+          <span style="position:absolute;bottom:14px;right:14px;display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:100px;background:rgba(10,26,60,.88);color:#fff;font:600 11px/1 Archivo,sans-serif;letter-spacing:.04em">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21M11 8v6M8 11h6"></path></svg>
+            Hover to zoom 1.8×
+          </span>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:14px">
+          <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
+            <div onClick="{{ t.pick }}" style="flex:1;aspect-ratio:1;border-radius:10px;border:2px solid {{ t.border }};background:repeating-linear-gradient(135deg,#F2F5F9 0 9px,#E5EAF2 9px 18px);cursor:pointer;display:grid;place-items:center;transition:border-color .16s" style-hover="border-color:#0A1A3C">
+              <span style="font:500 9px/1.3 ui-monospace,Menlo,monospace;color:#7b8798;text-align:center;padding:4px">{{ t.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <!-- BUY BLOCK -->
+      <div>
+        <div style="font:600 10.5px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#8b97a8">Frostline · SKU FL-RC2000</div>
+        <h1 style="margin:14px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(28px,4.4vw,40px);line-height:1.05;letter-spacing:-.02em;color:#0A1A3C">2-Door Reach-In Chiller</h1>
+        <p style="margin:12px 0 0;font:400 16px/1.6 Archivo,sans-serif;color:#5d6b80">1,200L of stainless capacity that holds 2°C through a 38°C service line.</p>
+        <div style="display:flex;align-items:flex-end;gap:14px;margin-top:24px">
+          <span style="font-family:'Archivo Black',sans-serif;font-size:clamp(29px,4vw,38px);line-height:1;color:#E11F26">₱128,500</span>
+          <span style="font:400 15px/1 Archivo,sans-serif;color:#8b97a8;text-decoration:line-through;padding-bottom:6px">₱146,000</span>
+          <span style="padding:5px 9px;border-radius:5px;background:rgba(225,31,38,.1);color:#B8141A;font:700 11px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Save 12%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px;margin-top:16px;font:600 13px/1 Archivo,sans-serif;color:#0F7A46">
+          <span style="width:9px;height:9px;border-radius:50%;background:#16A35A;box-shadow:0 0 0 4px rgba(22,163,90,.18)"></span>In stock — 6 units, Quezon City warehouse
+        </div>
+        <div style="display:flex;gap:12px;margin-top:26px">
+          <button onClick="{{ addToQuote }}" style="flex:1;height:56px;border:0;border-radius:10px;background:#E11F26;color:#fff;font:700 14px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 30px rgba(225,31,38,.35);transition:transform .16s,background .16s" style-hover="background:#F5333A;transform:translateY(-2px)" style-active="transform:translateY(1px)">Add to quote</button>
+          <button style="flex:1;height:56px;border:2px solid #0A1A3C;border-radius:10px;background:#fff;color:#0A1A3C;font:700 14px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .18s,color .18s" style-hover="background:#0A1A3C;color:#fff">Request a demo</button>
+        </div>
+        <button disabled="{{ true }}" style="width:100%;height:48px;margin-top:12px;border:1.5px solid #E6E9EF;border-radius:10px;background:#F8FAFC;color:#A9B3C1;font:700 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:not-allowed">Financing — available Q1 (disabled)</button>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;padding:20px 0;border-top:1px solid #E6E9EF;border-bottom:1px solid #E6E9EF">
+          <sc-for list="{{ trustStrip }}" as="t" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+              <div style="width:38px;height:38px;border-radius:50%;border:2px solid #0A1A3C;display:grid;place-items:center">
+                <div style="width:13px;height:13px;border:2px solid #E11F26;border-radius:{{ t.iconRadius }}"></div>
+              </div>
+              <div style="font:700 11.5px/1.35 Archivo,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#0A1A3C">{{ t.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div style="max-width:1240px;margin:0 auto;padding:56px clamp(18px,4vw,32px) 0">
+      <div style="display:flex;gap:4px;border-bottom:1px solid #E6E9EF">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+          <button onClick="{{ t.pick }}" style="padding:14px 20px;border:0;border-bottom:3px solid {{ t.border }};background:none;font:700 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:{{ t.fg }};cursor:pointer;transition:color .16s,border-color .16s" style-hover="color:#0A1A3C">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="padding:30px 0 10px">
+        <sc-if value="{{ tabIsSpecs }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 40px;max-width:900px">
+            <sc-for list="{{ specs }}" as="s" hint-placeholder-count="8">
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #EEF2F7">
+                <span style="font:500 13.5px/1.4 Archivo,sans-serif;color:#8b97a8">{{ s.k }}</span>
+                <span style="font:600 13.5px/1.4 Archivo,sans-serif;color:#0A1A3C;text-align:right">{{ s.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ tabIsFeatures }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:960px">
+            <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+              <div style="padding:20px;border:1px solid #E6E9EF;border-radius:12px;background:#F8FAFC">
+                <div style="font:700 15px/1.3 Archivo,sans-serif;color:#0A1A3C">{{ f.t }}</div>
+                <div style="margin-top:8px;font:400 13.5px/1.55 Archivo,sans-serif;color:#5d6b80">{{ f.b }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ tabIsWarranty }}" hint-placeholder-val="{{ false }}">
+          <p style="max-width:680px;margin:0;font:400 15px/1.7 Archivo,sans-serif;color:#5d6b80">Two years parts, one year labour, nationwide. Registered units get 24-hour response inside Metro Manila and 72-hour response in provincial service areas. Genuine compressor stock held locally — no six-week import waits.</p>
+        </sc-if>
+        <sc-if value="{{ tabIsShipping }}" hint-placeholder-val="{{ false }}">
+          <p style="max-width:680px;margin:0;font:400 15px/1.7 Archivo,sans-serif;color:#5d6b80">Free delivery and levelling within Metro Manila on orders above ₱75,000. Provincial freight quoted per crate. Installation includes refrigerant check, temperature pull-down test, and a signed commissioning sheet for your food-safety file.</p>
+        </sc-if>
+      </div>
+    </div>
+
+    <!-- RELATED -->
+    <section style="background:#F8FAFC;margin-top:56px;padding:66px 0 90px;border-top:1px solid #E6E9EF">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px)">
+        <h2 style="margin:0 0 26px;font-family:'Archivo Black',sans-serif;font-size:clamp(23px,3.4vw,30px);color:#0A1A3C">You may also like</h2>
+        <div style="display:flex;gap:20px;overflow-x:auto;padding-bottom:8px">
+          <sc-for list="{{ related }}" as="p" hint-placeholder-count="4">
+            <div style="flex:none;width:250px;background:#fff;border:1px solid #E6E9EF;border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .22s,box-shadow .22s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(10,26,60,.16)">
+              <div style="height:160px;background:repeating-linear-gradient(135deg,#F2F5F9 0 11px,#E5EAF2 11px 22px);display:grid;place-items:center">
+                <span style="font:500 10px/1.5 ui-monospace,Menlo,monospace;color:#7b8798;text-align:center;padding:0 12px">{{ p.shot }}</span>
+              </div>
+              <div style="padding:16px">
+                <div style="font:700 14.5px/1.3 Archivo,sans-serif;color:#0A1A3C">{{ p.name }}</div>
+                <div style="margin-top:10px;font-family:'Archivo Black',sans-serif;font-size:16px;color:#E11F26">{{ p.price }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <sc-if value="{{ quoteBar }}" hint-placeholder-val="{{ false }}">
+      <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(10,26,60,.97);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.12);box-shadow:0 -12px 40px rgba(0,0,0,.4)">
+        <div style="max-width:1240px;margin:0 auto;padding:14px clamp(18px,4vw,32px);display:flex;align-items:center;gap:20px">
+          <div style="width:46px;height:46px;border-radius:8px;background:repeating-linear-gradient(135deg,#E8EDF5 0 8px,#DCE3ED 8px 16px);flex:none"></div>
+          <div style="flex:1;min-width:0">
+            <div style="font:700 14px/1.2 Archivo,sans-serif;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">2-Door Reach-In Chiller</div>
+            <div style="font:500 12px/1.2 Archivo,sans-serif;color:rgba(255,255,255,.6);margin-top:4px">In stock · ships in 2 days</div>
+          </div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:22px;color:#fff">₱128,500</div>
+          <button onClick="{{ addToQuote }}" style="height:46px;padding:0 24px;border:0;border-radius:9px;background:#E11F26;color:#fff;font:700 13px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .16s" style-hover="background:#F5333A">Add to quote</button>
+        </div>
+      </div>
+    </sc-if>
+  </main>
+  </sc-if>
+
+  <!-- ===================== 404 ===================== -->
+  <sc-if value="{{ is404 }}" hint-placeholder-val="{{ false }}">
+  <main style="min-height:100vh;padding-top:76px;position:relative;overflow:hidden;background:radial-gradient(90% 80% at 50% 0%,#1B3B86 0%,#0C1F4C 45%,#050E22 100%);display:grid;place-items:center">
+    <div style="position:absolute;top:-180px;left:50%;width:700px;height:700px;transform:translateX(-50%);background:conic-gradient(from 165deg at 50% 0%,transparent 0deg,rgba(255,255,255,.16) 15deg,transparent 32deg);filter:blur(5px)"></div>
+    <div style="position:relative;text-align:center;padding:60px clamp(18px,4vw,32px) 90px;max-width:720px">
+      <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(72px,15vw,116px);line-height:1;letter-spacing:-.04em;color:rgba(255,255,255,.1);-webkit-text-stroke:1px rgba(255,255,255,.28)">404</div>
+      <div style="position:relative;width:190px;height:150px;margin:-46px auto 0">
+        <div style="position:absolute;inset:0;border-radius:10px;background:repeating-linear-gradient(135deg,#E8EDF5 0 12px,#D6DEEA 12px 24px);box-shadow:0 34px 60px rgba(0,0,0,.6);display:grid;place-items:center">
+          <span style="font:500 10px/1.5 ui-monospace,Menlo,monospace;color:#5d6b80;text-align:center;padding:10px">product shot<br>lone stock pot</span>
+        </div>
+        <div style="position:absolute;left:50%;bottom:-38px;width:280px;height:52px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(120,170,255,.4),transparent 70%);filter:blur(10px)"></div>
+      </div>
+      <h1 style="margin:52px 0 0;font-family:'Archivo Black',sans-serif;font-size:clamp(30px,5.4vw,46px);line-height:1.06;letter-spacing:-.02em;color:#fff">We couldn't cook<br>this page up</h1>
+      <p style="margin:16px auto 0;max-width:430px;font:400 16px/1.6 Archivo,sans-serif;color:rgba(255,255,255,.66)">Looks like this one got sent back to the kitchen. Search the catalogue or head back to the showroom floor.</p>
+      <div style="display:flex;gap:10px;max-width:460px;margin:30px auto 0">
+        <div style="flex:1;display:flex;align-items:center;gap:10px;height:52px;padding:0 16px;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:rgba(255,255,255,.07);transition:border-color .18s,box-shadow .18s" style-focus="border-color:#E11F26;box-shadow:0 0 0 3px rgba(225,31,38,.3)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+          <input placeholder="Search 148 products" style="flex:1;border:0;outline:0;background:transparent;font:500 14px Archivo,sans-serif;color:#fff">
+        </div>
+        <button style="height:52px;padding:0 22px;border:0;border-radius:10px;background:#E11F26;color:#fff;font:700 13px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .16s" style-hover="background:#F5333A">Search</button>
+      </div>
+      <div style="display:flex;justify-content:center;gap:14px;margin-top:26px">
+        <button onClick="{{ goShop }}" style="height:48px;padding:0 24px;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:rgba(255,255,255,.07);color:#fff;font:700 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .18s" style-hover="background:rgba(255,255,255,.16)">Browse shop</button>
+        <button onClick="{{ goHome }}" style="height:48px;padding:0 24px;border:1px solid transparent;border-radius:10px;background:transparent;color:rgba(255,255,255,.7);font:700 13px/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:color .18s" style-hover="color:#fff">Back home</button>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#050E22;border-top:1px solid rgba(255,255,255,.08);padding:64px 0 28px">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,32px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(28px,3vw,40px)">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:42px;height:42px;border-radius:50%;overflow:hidden;flex:none;background:#0B0B0C;box-shadow:0 0 0 2px rgba(225,31,38,.85)">
+              <svg viewBox="0 0 100 100" width="100%" height="100%" style="display:block" role="img" aria-label="PKE badge">
+                <circle cx="50" cy="50" r="50" fill="#0B0B0C"></circle>
+                <circle cx="50" cy="50" r="43" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1"></circle>
+                <path id="pkeRingFoot" d="M 35.64 89.47 A 42 42 0 1 1 64.36 89.47" fill="none"></path>
+                <text font-family="Archivo,sans-serif" font-weight="700" font-size="6.4" letter-spacing="1.6" fill="#fff">
+                  <textPath href="#pkeRingFoot" startOffset="50%" text-anchor="middle" textLength="205" lengthAdjust="spacingAndGlyphs">PREMIUM KITCHEN EQUIPMENT</textPath>
+                </text>
+                <text x="29" y="64" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="900" font-size="36" fill="#fff">P</text>
+                <text x="73" y="64" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="900" font-size="36" fill="#fff">E</text>
+                <polygon points="56,31 41,58 49,58 44,73 65,45 53,45 59,31" fill="#E11F26"></polygon>
+              </svg>
+            </div>
+            <span style="font-family:'Archivo Black',sans-serif;font-size:16px;letter-spacing:.14em;color:#fff">PKE</span>
+          </div>
+          <p style="margin:18px 0 0;max-width:290px;font:400 13.5px/1.65 Archivo,sans-serif;color:rgba(255,255,255,.55)">Commercial kitchen equipment, supplied and serviced across the Philippines since 2014.</p>
+          <div style="margin-top:20px;font:600 12px/1.8 Archivo,sans-serif;color:rgba(255,255,255,.8)">+63 917 555 0142<br>sales@pke.ph</div>
+          <div style="display:flex;gap:8px;margin-top:18px">
+            <sc-for list="{{ socials }}" as="s" hint-placeholder-count="4">
+              <a href="#" style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;font:700 11px/1 Archivo,sans-serif;color:rgba(255,255,255,.75);transition:background .18s,border-color .18s" style-hover="background:#E11F26;border-color:#E11F26;color:#fff">{{ s }}</a>
+            </sc-for>
+          </div>
+        </div>
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="2">
+          <div>
+            <div style="font:700 10.5px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#fff">{{ col.title }}</div>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+              <sc-for list="{{ col.links }}" as="l" hint-placeholder-count="4">
+                <a href="#" style="font:400 13.5px/1 Archivo,sans-serif;color:rgba(255,255,255,.55);transition:color .16s" style-hover="color:#fff">{{ l }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <div>
+          <div style="font:700 10.5px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#fff">Newsletter</div>
+          <p style="margin:16px 0 0;font:400 13px/1.6 Archivo,sans-serif;color:rgba(255,255,255,.55)">Monthly price drops and new arrivals.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+            <input placeholder="you@restaurant.ph" style="height:46px;padding:0 14px;border:1px solid rgba(255,255,255,.18);border-radius:9px;background:rgba(255,255,255,.06);outline:0;font:500 13.5px Archivo,sans-serif;color:#fff;transition:border-color .18s,box-shadow .18s" style-focus="border-color:#E11F26;box-shadow:0 0 0 3px rgba(225,31,38,.28)">
+            <button style="height:46px;border:0;border-radius:9px;background:#E11F26;color:#fff;font:700 12.5px/1 Archivo,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .16s" style-hover="background:#F5333A">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);font:400 12px/1 Archivo,sans-serif;color:rgba(255,255,255,.4)">
+        <span>© 2026 Premium Kitchen Equipment. All rights reserved.</span>
+        <span style="display:flex;gap:18px"><a href="#" style="color:rgba(255,255,255,.4)">Privacy</a><a href="#" style="color:rgba(255,255,255,.4)">Terms</a><a href="#" style="color:rgba(255,255,255,.4)">Service areas</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== PAGE SWITCHER ===== -->
+  <div style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:90;display:flex;align-items:center;gap:6px;padding:7px;border-radius:100px;background:rgba(5,14,34,.92);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);box-shadow:0 18px 40px rgba(0,0,0,.5)">
+    <span style="padding:0 10px;font:700 9.5px/1 Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)">Pages</span>
+    <sc-for list="{{ pageTabs }}" as="t" hint-placeholder-count="4">
+      <button onClick="{{ t.pick }}" style="height:34px;padding:0 15px;border:0;border-radius:100px;background:{{ t.bg }};color:{{ t.fg }};font:700 12px/1 Archivo,sans-serif;letter-spacing:.04em;cursor:pointer;transition:background .18s,color .18s">{{ t.label }}</button>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showAnnotations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;showMobileNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;quoteBarAlways&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype&quot;}}">
+class Component extends DCLogic {
+  state = {
+    page: 'home', scrolled: false, cart: 2, sort: 'Best Sellers', sortOpen: false,
+    brands: ['Frostline'], power: [], price: 320000, empty: false, tab: 'Specifications', gallery: 0, deep: false,
+    compact: false, narrow: false, menuOpen: false
+  };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const w = window.innerWidth;
+      const c = w < 1120, n = w < 900;
+      if (c !== this.state.compact || n !== this.state.narrow) this.setState({ compact: c, narrow: n });
+    };
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+    this._onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      const s = y > 40, d = y > 520;
+      if (s !== this.state.scrolled || d !== this.state.deep) this.setState({ scrolled: s, deep: d });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onResize); }
+
+  nav(page) { this.setState({ page, sortOpen: false }); try { window.scrollTo(0, 0); } catch (e) {} }
+
+  peso(n) { return '₱' + n.toLocaleString('en-US'); }
+
+  renderVals() {
+    const s = this.state;
+    const ann = this.props.showAnnotations ?? true;
+    const open = () => this.nav('detail');
+
+    const cats = [
+      ['Refrigeration', 'Chillers, freezers, display cases', 34, '4px'],
+      ['Cooking Equipment', 'Ranges, ovens, griddles, fryers', 41, '50%'],
+      ['Food Prep', 'Slicers, grinders, mixers', 28, '2px'],
+      ['Smallwares', 'Pans, tools, storage', 32, '0'],
+      ['Catering', 'Chafers, urns, soup kettles', 13, '50% 50% 4px 4px']
+    ].map(c => ({ name: c[0], blurb: c[1], count: c[2], iconRadius: c[3], open: () => this.nav('list') }));
+
+    const mk = (brand, name, spec, price, was, badge, shot) => ({
+      brand, name, spec, price: this.peso(price), was: was ? this.peso(was) : '', badge, shot, open
+    });
+
+    const featured = [
+      mk('Frostline', '2-Door Reach-In Chiller', '1,200L · 2°C hold · R290', 128500, 146000, 'Best seller', 'product shot\n2-door upright chiller'),
+      mk('Ironcast', '4-Burner Range + Oven', 'Gas · 28kW · cast grates', 96400, 112000, 'Hot deal', 'product shot\nrange with oven base'),
+      mk('Slicemaster', '12" Meat Slicer', '250W · belt drive · anodised', 38900, 44500, 'New', 'product shot\ngravity meat slicer'),
+      mk('Thermaline', 'Electric Soup Kettle', '10L · 400W · digital dial', 12800, 15200, 'Trending', 'product shot\nsoup kettle')
+    ];
+
+    const listingAll = [
+      mk('Frostline', '2-Door Reach-In Chiller', '1,200L · stainless · 2°C', 128500, 0, 'Best seller', 'product shot\n2-door chiller'),
+      mk('Frostline', 'Undercounter Chiller', '380L · 3 drawers', 64200, 0, '', 'product shot\nundercounter unit'),
+      mk('Polarco', 'Glass-Door Merchandiser', '520L · LED canopy', 71900, 0, 'New', 'product shot\nglass door fridge'),
+      mk('Polarco', 'Upright Freezer −18°C', '900L · auto defrost', 104000, 0, '', 'product shot\nupright freezer'),
+      mk('Chillwerks', 'Blast Chiller 5-Tray', 'GN1/1 · 20kg cycle', 186500, 0, 'Pro', 'product shot\nblast chiller'),
+      mk('Chillwerks', 'Prep Table Chiller', '1.8m · 4 doors', 142800, 0, '', 'product shot\nprep table fridge'),
+      mk('Frostline', 'Chest Freezer 450L', 'Sliding glass lid', 36400, 0, 'Best seller', 'product shot\nchest freezer'),
+      mk('Nordvent', 'Ice Machine 120kg/day', 'Cube · air cooled', 158900, 0, '', 'product shot\nice machine'),
+      mk('Nordvent', 'Cake Display Chiller', '3-tier · curved glass', 88700, 0, 'New', 'product shot\ncake display case')
+    ];
+    const listing = s.brands.length ? listingAll.filter(p => s.brands.indexOf(p.brand) > -1) : listingAll;
+    const isEmpty = s.empty;
+
+    const brandFilters = ['Frostline', 'Polarco', 'Chillwerks', 'Nordvent'].map((b, i) => {
+      const on = s.brands.indexOf(b) > -1;
+      return {
+        label: b, count: [3, 2, 2, 2][i], tick: on ? 1 : 0,
+        border: on ? '#E11F26' : '#CBD5E4', fill: on ? '#E11F26' : '#fff',
+        toggle: () => this.setState(st => ({ brands: on ? st.brands.filter(x => x !== b) : st.brands.concat([b]), empty: false }))
+      };
+    });
+
+    const powerFilters = ['Electric', 'Gas'].map(p => {
+      const on = s.power.indexOf(p) > -1;
+      return {
+        label: p, border: on ? '#0A1A3C' : '#E6E9EF', bg: on ? '#0A1A3C' : '#fff', fg: on ? '#fff' : '#5d6b80',
+        toggle: () => this.setState(st => ({ power: on ? st.power.filter(x => x !== p) : st.power.concat([p]) }))
+      };
+    });
+
+    const sortOptions = ['Best Sellers', 'Price: Low to High', 'Price: High to Low', 'Newest'].map(o => ({
+      label: o, font: o === s.sort ? 700 : 500, fg: o === s.sort ? '#0A1A3C' : '#5d6b80',
+      bg: o === s.sort ? '#F2F5F9' : 'transparent', pick: () => this.setState({ sort: o, sortOpen: false })
+    }));
+
+    const pages = ['1', '2', '3', '→'].map((l, i) => ({
+      label: l, bg: i === 0 ? '#0A1A3C' : '#fff', fg: i === 0 ? '#fff' : '#5d6b80', border: i === 0 ? '#0A1A3C' : '#E6E9EF'
+    }));
+
+    const tabNames = ['Specifications', 'Features', 'Warranty & Support', 'Shipping'];
+    const tabs = tabNames.map(t => ({
+      label: t, border: t === s.tab ? '#E11F26' : 'transparent', fg: t === s.tab ? '#0A1A3C' : '#8b97a8',
+      pick: () => this.setState({ tab: t })
+    }));
+
+    const thumbLabels = ['front\nclosed', 'doors\nopen', 'shelving\ndetail', 'control\npanel'];
+    const thumbs = thumbLabels.map((l, i) => ({
+      label: l, border: i === s.gallery ? '#E11F26' : '#E6E9EF', pick: () => this.setState({ gallery: i })
+    }));
+
+    return {
+      isHome: s.page === 'home', isList: s.page === 'list', isDetail: s.page === 'detail', is404: s.page === '404',
+      cart: s.cart, showAnn: ann,
+      wide: !s.compact, compact: s.compact, showLockupSub: !s.narrow,
+      listCols: s.compact ? 'minmax(0,1fr)' : '268px minmax(0,1fr)',
+      menuOpen: s.menuOpen, toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })), showMobile: this.props.showMobileNotes ?? true,
+      goHome: () => this.nav('home'), goShop: () => this.nav('list'),
+      addToQuote: () => this.setState(st => ({ cart: st.cart + 1 })),
+
+      headerStyle: 'position:fixed;top:0;left:0;right:0;z-index:70;height:76px;transition:background .28s,box-shadow .28s,height .28s,border-color .28s;'
+        + (s.scrolled
+          ? 'background:rgba(5,14,34,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);box-shadow:0 10px 30px rgba(0,0,0,.4)'
+          : 'background:' + (s.page === 'list' || s.page === 'detail' ? 'rgba(10,26,60,.98)' : 'transparent') + ';border-bottom:1px solid rgba(255,255,255,.06)'),
+
+      navLinks: [['Shop', '#'], ['Categories', '#categories'], ['About', '#'], ['Contact', '#']].map(l => ({ label: l[0], href: l[1] })),
+
+      heroLineup: [
+        { label: 'product shot\nupright chiller', h: '250px' },
+        { label: 'product shot\ncombi oven', h: '206px' },
+        { label: 'product shot\nflat griddle', h: '150px' },
+        { label: 'product shot\ndeep fryer', h: '196px' },
+        { label: 'product shot\nwire rack', h: '264px' }
+      ],
+      heroStats: [
+        { n: '148', l: 'SKUs in stock' }, { n: '2 yrs', l: 'Parts warranty' },
+        { n: '24h', l: 'Metro response' }, { n: '1.2k+', l: 'Kitchens served' }
+      ],
+      categories: cats,
+      featured,
+      trust: [
+        { title: 'Commercial-grade only', body: 'Every unit rated for continuous service, not scaled-up domestic hardware.', iconRadius: '2px' },
+        { title: '2-year parts warranty', body: 'Genuine compressors and elements held in local stock.', iconRadius: '50%' },
+        { title: 'PH-wide delivery', body: 'Crated freight nationwide, levelled and commissioned on site.', iconRadius: '0' },
+        { title: 'Technician support', body: 'Direct line to engineers who have opened the unit you own.', iconRadius: '50% 50% 2px 2px' }
+      ],
+      social: [
+        { line: 'Shave the\nHeat Away', sub: 'Ice shaver · in stock', bg: 'linear-gradient(160deg,#1B3B86,#0A1A3C)' },
+        { line: 'The Heart of\nEvery Gathering', sub: 'Multi-cooker · 10L', bg: 'linear-gradient(160deg,#E11F26,#7A0C11)' },
+        { line: 'Costing You\nMoney?', sub: 'Manual prep vs. PKE', bg: 'linear-gradient(160deg,#111827,#0A1A3C)' },
+        { line: 'Every Slice.\nPerfectly Consistent.', sub: '12" meat slicer', bg: 'linear-gradient(160deg,#FF9F1C,#9A5A00)' },
+        { line: 'Cafe Quality\nat Home', sub: 'Espresso line', bg: 'linear-gradient(160deg,#132E6B,#050E22)' }
+      ],
+      mobiles: [
+        { title: 'Hero + nav at 375px', note: 'Nav collapses to a hamburger drawer; the 5-up lineup becomes a 2-up scroll strip; display type drops 76 → 40px.', bg: '#0A1A3C', rows: [
+          { label: 'PKE  ☰', h: '46px', bg: 'rgba(255,255,255,.1)', fg: '#fff' },
+          { label: 'Equipping Your Dream Kitchen', h: '96px', bg: 'rgba(255,255,255,.06)', fg: '#fff' },
+          { label: 'Shop equipment', h: '46px', bg: '#E11F26', fg: '#fff' },
+          { label: 'lineup — horizontal scroll', h: '150px', bg: 'rgba(255,255,255,.08)', fg: 'rgba(255,255,255,.7)' }
+        ] },
+        { title: 'Filters as bottom sheet', note: 'Sidebar becomes a “Filters (2)” button that opens a sheet; sort moves into the same bar.', bg: '#F8FAFC', rows: [
+          { label: 'Home / Shop / Refrigeration', h: '34px', bg: '#fff', fg: '#8b97a8' },
+          { label: 'Filters (2)        Sort ▾', h: '46px', bg: '#0A1A3C', fg: '#fff' },
+          { label: 'product card', h: '130px', bg: '#fff', fg: '#8b97a8' },
+          { label: 'product card', h: '130px', bg: '#fff', fg: '#8b97a8' }
+        ] },
+        { title: 'Sticky quote bar', note: 'Product grid goes 1-up under 480px, 2-up at tablet; the quote bar pins after the buy block scrolls away.', bg: '#fff', rows: [
+          { label: 'gallery', h: '150px', bg: '#EEF2F7', fg: '#8b97a8' },
+          { label: '2-Door Reach-In Chiller', h: '44px', bg: '#F8FAFC', fg: '#0A1A3C' },
+          { label: 'Specifications ▾', h: '44px', bg: '#F8FAFC', fg: '#0A1A3C' },
+          { label: '₱128,500   Add to quote', h: '56px', bg: '#E11F26', fg: '#fff' }
+        ] }
+      ],
+
+      brandFilters, powerFilters, sortOptions, pages,
+      capFilters: ['< 500L', '500–900L', '900–1500L', '1500L+'],
+      priceLabel: this.peso(s.price), pricePct: Math.round(((s.price - 25000) / 475000) * 100) + '%',
+      bumpPrice: () => this.setState(st => ({ price: st.price >= 500000 ? 120000 : st.price + 90000 })),
+      clearFilters: () => this.setState({ brands: [], power: [], price: 320000, empty: false }),
+      toggleEmpty: () => this.setState(st => ({ empty: !st.empty })),
+      emptyToggleLabel: s.empty ? 'Show results again' : 'Preview zero-results state',
+      sort: s.sort, sortOpen: s.sortOpen, toggleSort: () => this.setState(st => ({ sortOpen: !st.sortOpen })),
+      listing, isEmpty, hasResults: !isEmpty, resultCount: isEmpty ? 0 : listing.length,
+
+      tabs, thumbs,
+      tabIsSpecs: s.tab === 'Specifications', tabIsFeatures: s.tab === 'Features',
+      tabIsWarranty: s.tab === 'Warranty & Support', tabIsShipping: s.tab === 'Shipping',
+      galleryLabel: 'product shot — ' + thumbLabels[s.gallery].replace('\n', ' '),
+      specs: [
+        { k: 'External dimensions', v: '1,340 × 800 × 2,010 mm' }, { k: 'Gross capacity', v: '1,200 L' },
+        { k: 'Temperature range', v: '0 °C to 8 °C' }, { k: 'Refrigerant', v: 'R290 (hydrocarbon)' },
+        { k: 'Power', v: '220–240 V / 60 Hz / 480 W' }, { k: 'Shelves', v: '6 × adjustable GN2/1' },
+        { k: 'Body', v: '304 stainless, 60 mm PU insulation' }, { k: 'Net weight', v: '148 kg' }
+      ],
+      features: [
+        { t: 'Tropical-rated compressor', b: 'Holds set point in 38 °C, 80% RH kitchens without duty-cycling itself to death.' },
+        { t: 'Self-closing doors', b: 'Cam-lift hinges shut from 15° so a busy line never leaves a door ajar.' },
+        { t: 'Digital controller', b: 'One-touch defrost, HACCP alarm, and a probe log you can export monthly.' },
+        { t: 'Serviceable from the front', b: 'Condenser deck slides out — no pulling the unit off the wall for a clean.' }
+      ],
+      trustStrip: [
+        { label: '2-year warranty', iconRadius: '2px' },
+        { label: 'Certified equipment', iconRadius: '50%' },
+        { label: 'PH-wide delivery', iconRadius: '0' }
+      ],
+      related: [
+        { name: 'Undercounter Chiller 380L', price: this.peso(64200), shot: 'product shot\nundercounter unit' },
+        { name: 'Glass-Door Merchandiser', price: this.peso(71900), shot: 'product shot\nglass door fridge' },
+        { name: 'Blast Chiller 5-Tray', price: this.peso(186500), shot: 'product shot\nblast chiller' },
+        { name: 'Ice Machine 120kg/day', price: this.peso(158900), shot: 'product shot\nice machine' }
+      ],
+      quoteBar: (this.props.quoteBarAlways ?? false) || s.deep,
+
+      socials: ['IG', 'FB', 'TT', 'YT'],
+      footerCols: [
+        { title: 'Shop', links: ['Refrigeration', 'Cooking Equipment', 'Food Prep', 'Smallwares', 'Catering'] },
+        { title: 'Company', links: ['About PKE', 'Service areas', 'Financing', 'Careers'] }
+      ],
+      pageTabs: [['Home', 'home'], ['Listing', 'list'], ['Detail', 'detail'], ['404', '404']].map(t => ({
+        label: t[0], bg: s.page === t[1] ? '#E11F26' : 'transparent', fg: s.page === t[1] ? '#fff' : 'rgba(255,255,255,.7)',
+        pick: () => this.nav(t[1])
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
