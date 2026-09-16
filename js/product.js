@@ -2,16 +2,19 @@
 (function () {
   "use strict";
 
-  /* ---------- Gallery thumbnails ---------- */
-  var mainLabel = document.querySelector("[data-gallery-label]");
-  var thumbs = Array.prototype.slice.call(document.querySelectorAll("[data-thumb]"));
+  /* ---------- Gallery thumbnails (crop into different regions of the one product photo) ---------- */
+  var mainFrame = document.querySelector("[data-gallery-image]");
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll("[data-thumb-pos]"));
   thumbs.forEach(function (thumb) {
     thumb.addEventListener("click", function () {
       thumbs.forEach(function (t) {
         t.removeAttribute("aria-current");
       });
       thumb.setAttribute("aria-current", "true");
-      if (mainLabel) mainLabel.textContent = "product shot — " + thumb.dataset.thumb;
+      if (mainFrame) {
+        mainFrame.style.backgroundSize = thumb.dataset.thumbSize;
+        mainFrame.style.backgroundPosition = thumb.dataset.thumbPos;
+      }
     });
   });
 

@@ -1,0 +1,5 @@
+# Update the Sitemap URL below once this site is live on its real domain.
+User-agent: *
+Allow: /
+
+Sitemap: https://REPLACE-WITH-YOUR-DOMAIN/sitemap.xml

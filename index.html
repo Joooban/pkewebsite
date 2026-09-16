@@ -15,6 +15,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Premium Kitchen Equipment",
+  "alternateName": "PKE",
+  "description": "Mindanao's Prime Kitchen Equipment Supplier — commercial refrigeration, cooking lines, food prep, catering, and smallwares based in Davao City.",
+  "url": "https://REPLACE-WITH-YOUR-DOMAIN/index.html",
+  "telephone": "+63-917-627-1915",
+  "email": "premiumkitchendvo@gmail.com",
+  "image": "https://REPLACE-WITH-YOUR-DOMAIN/images/og-image.png",
+  "priceRange": "₱₱",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Diamond Village, corner Mamay Road & A. Angliongto Sr., Damosa Lanang, Buhangin",
+    "addressLocality": "Davao City",
+    "addressRegion": "Davao del Sur",
+    "postalCode": "8000",
+    "addressCountry": "PH"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/PremiumKitchenEquip/",
+    "https://www.instagram.com/premiumkitchenequipment/"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -63,11 +95,11 @@
       <button class="icon-btn navbar__mobile-only" type="button" aria-label="Menu" aria-expanded="false" data-menu-toggle>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
       </button>
-      <button class="navbar__quote" type="button" aria-label="View quote list">
+      <a class="navbar__quote" href="quote.html" aria-label="View quote list">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h2l2.2 10.2h9.4L20 8H7"></path><circle cx="10" cy="19" r="1.4"></circle><circle cx="17" cy="19" r="1.4"></circle></svg>
         <span class="navbar__quote-label">Quote</span>
         <span class="navbar__quote-badge" data-cart-count>2</span>
-      </button>
+      </a>
       <a class="btn btn--primary navbar__cta" href="shop.html">Get a Quote</a>
     </div>
   </div>
@@ -112,10 +144,10 @@
     </div>
 
     <div class="hero__stats">
-      <div class="hero__stat"><div class="hero__stat-n">148</div><div class="hero__stat-l">SKUs in stock</div></div>
+      <div class="hero__stat"><div class="hero__stat-n">31</div><div class="hero__stat-l">SKUs in stock</div></div>
       <div class="hero__stat"><div class="hero__stat-n">2 yrs</div><div class="hero__stat-l">Parts warranty</div></div>
-      <div class="hero__stat"><div class="hero__stat-n">24h</div><div class="hero__stat-l">Metro response</div></div>
-      <div class="hero__stat"><div class="hero__stat-n">1.2k+</div><div class="hero__stat-l">Kitchens served</div></div>
+      <div class="hero__stat"><div class="hero__stat-n">24h</div><div class="hero__stat-l">Davao response</div></div>
+      <div class="hero__stat"><div class="hero__stat-n">Mindanao</div><div class="hero__stat-l">Wide delivery</div></div>
     </div>
   </section>
 
@@ -127,47 +159,47 @@
           <div class="eyebrow">Shop by category</div>
           <h2 class="section-title">Everything behind the line</h2>
         </div>
-        <a class="section-link" href="shop.html">All 148 products →</a>
+        <a class="section-link" href="shop.html">All 31 products →</a>
       </div>
       <div class="category-grid">
-        <a class="category-card reveal" href="shop.html">
+        <a class="category-card category-card--photo reveal" href="shop.html?cat=cooking-equipment" style="background-image:url('images/products/convection-oven.jpg')">
+          <span class="category-card__icon"><span style="border-radius:50%"></span></span>
+          <div>
+            <div class="category-card__name">Cooking Equipment</div>
+            <div class="category-card__blurb">Ovens, espresso, fryers, waffle irons</div>
+            <div class="category-card__count">9 SKUs →</div>
+          </div>
+        </a>
+        <a class="category-card category-card--photo reveal" href="shop.html?cat=food-prep" style="background-image:url('images/products/meat-slicer.jpg')">
+          <span class="category-card__icon"><span style="border-radius:2px"></span></span>
+          <div>
+            <div class="category-card__name">Food Prep</div>
+            <div class="category-card__blurb">Slicers, mixers, grinders, blenders</div>
+            <div class="category-card__count">8 SKUs →</div>
+          </div>
+        </a>
+        <a class="category-card category-card--photo reveal" href="shop.html?cat=catering" style="background-image:url('images/products/popcorn-machine.jpg')">
+          <span class="category-card__icon"><span style="border-radius:50% 50% 4px 4px"></span></span>
+          <div>
+            <div class="category-card__name">Catering</div>
+            <div class="category-card__blurb">Chafers, urns, warmers, dispensers</div>
+            <div class="category-card__count">9 SKUs →</div>
+          </div>
+        </a>
+        <a class="category-card category-card--photo reveal" href="shop.html?cat=smallwares" style="background-image:url('images/products/coffee-grinder.jpg')">
+          <span class="category-card__icon"><span style="border-radius:0"></span></span>
+          <div>
+            <div class="category-card__name">Smallwares</div>
+            <div class="category-card__blurb">Grinders, scales, tampers, dispensers</div>
+            <div class="category-card__count">5 SKUs →</div>
+          </div>
+        </a>
+        <a class="category-card category-card--soon reveal" href="contact.html">
           <span class="category-card__icon"><span style="border-radius:4px"></span></span>
           <div>
             <div class="category-card__name">Refrigeration</div>
             <div class="category-card__blurb">Chillers, freezers, display cases</div>
-            <div class="category-card__count">34 SKUs →</div>
-          </div>
-        </a>
-        <a class="category-card reveal" href="shop.html">
-          <span class="category-card__icon"><span style="border-radius:50%"></span></span>
-          <div>
-            <div class="category-card__name">Cooking Equipment</div>
-            <div class="category-card__blurb">Ranges, ovens, griddles, fryers</div>
-            <div class="category-card__count">41 SKUs →</div>
-          </div>
-        </a>
-        <a class="category-card reveal" href="shop.html">
-          <span class="category-card__icon"><span style="border-radius:2px"></span></span>
-          <div>
-            <div class="category-card__name">Food Prep</div>
-            <div class="category-card__blurb">Slicers, grinders, mixers</div>
-            <div class="category-card__count">28 SKUs →</div>
-          </div>
-        </a>
-        <a class="category-card reveal" href="shop.html">
-          <span class="category-card__icon"><span style="border-radius:0"></span></span>
-          <div>
-            <div class="category-card__name">Smallwares</div>
-            <div class="category-card__blurb">Pans, tools, storage</div>
-            <div class="category-card__count">32 SKUs →</div>
-          </div>
-        </a>
-        <a class="category-card reveal" href="shop.html">
-          <span class="category-card__icon"><span style="border-radius:50% 50% 4px 4px"></span></span>
-          <div>
-            <div class="category-card__name">Catering</div>
-            <div class="category-card__blurb">Chafers, urns, soup kettles</div>
-            <div class="category-card__count">13 SKUs →</div>
+            <div class="category-card__count">Coming soon — ask us →</div>
           </div>
         </a>
       </div>
@@ -194,8 +226,8 @@
             <div class="product-card__spec">300mm blade · belt-driven · anodised body</div>
             <div class="product-card__price-row">
               <div>
-                <div class="product-card__price">₱32,900</div>
-                <div class="product-card__was">₱38,500</div>
+                <div class="product-card__price">₱34,900</div>
+                <div class="product-card__was">₱39,500</div>
               </div>
               <button class="btn btn--outline-navy btn--sm" type="button" data-add-to-quote>Add to quote</button>
             </div>
@@ -211,8 +243,8 @@
             <div class="product-card__spec">Dual portafilter · steam wand · gauge cluster</div>
             <div class="product-card__price-row">
               <div>
-                <div class="product-card__price">₱185,000</div>
-                <div class="product-card__was">₱210,000</div>
+                <div class="product-card__price">₱98,000</div>
+                <div class="product-card__was">₱115,000</div>
               </div>
               <button class="btn btn--outline-navy btn--sm" type="button" data-add-to-quote>Add to quote</button>
             </div>
@@ -228,8 +260,8 @@
             <div class="product-card__spec">7L bowl · whisk, hook &amp; paddle included</div>
             <div class="product-card__price-row">
               <div>
-                <div class="product-card__price">₱42,000</div>
-                <div class="product-card__was">₱48,000</div>
+                <div class="product-card__price">₱44,000</div>
+                <div class="product-card__was">₱50,000</div>
               </div>
               <button class="btn btn--outline-navy btn--sm" type="button" data-add-to-quote>Add to quote</button>
             </div>
@@ -245,8 +277,8 @@
             <div class="product-card__spec">10L · digital control · keep-warm</div>
             <div class="product-card__price-row">
               <div>
-                <div class="product-card__price">₱14,500</div>
-                <div class="product-card__was">₱16,800</div>
+                <div class="product-card__price">₱33,500</div>
+                <div class="product-card__was">₱39,000</div>
               </div>
               <button class="btn btn--outline-navy btn--sm" type="button" data-add-to-quote>Add to quote</button>
             </div>
@@ -271,13 +303,13 @@
         </div>
         <div class="trust-card reveal">
           <span class="trust-card__icon"><span style="border-radius:50%"></span></span>
-          <div class="trust-card__title">2-year parts warranty</div>
-          <div class="trust-card__body">Genuine compressors and elements held in local stock.</div>
+          <div class="trust-card__title">Genuine parts, held locally</div>
+          <div class="trust-card__body">Compressors and elements in stock — not a six-week import wait.</div>
         </div>
         <div class="trust-card reveal">
           <span class="trust-card__icon"><span style="border-radius:0"></span></span>
-          <div class="trust-card__title">PH-wide delivery</div>
-          <div class="trust-card__body">Crated freight nationwide, levelled and commissioned on site.</div>
+          <div class="trust-card__title">Mindanao-wide delivery</div>
+          <div class="trust-card__body">Crated freight, levelled and commissioned on site.</div>
         </div>
         <div class="trust-card reveal">
           <span class="trust-card__icon"><span style="border-radius:50% 50% 2px 2px"></span></span>
@@ -315,29 +347,33 @@
       <div>
         <div class="footer-col-title">Shop</div>
         <div class="footer-links">
-          <a href="shop.html">Refrigeration</a>
-          <a href="shop.html">Cooking Equipment</a>
-          <a href="shop.html">Food Prep</a>
-          <a href="shop.html">Smallwares</a>
-          <a href="shop.html">Catering</a>
+          <a href="shop.html?cat=cooking-equipment">Cooking Equipment</a>
+          <a href="shop.html?cat=food-prep">Food Prep</a>
+          <a href="shop.html?cat=catering">Catering</a>
+          <a href="shop.html?cat=smallwares">Smallwares</a>
         </div>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
         <div class="footer-links">
           <a href="about.html">About PKE</a>
-          <a href="#">Service areas</a>
-          <a href="#">Financing</a>
-          <a href="#">Careers</a>
+          <a href="service-areas.html">Service areas</a>
+          <a href="financing.html">Financing</a>
+          <a href="careers.html">Careers</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Premium Kitchen Equipment. All rights reserved.</span>
-      <span class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Service areas</a></span>
+      <span class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="service-areas.html">Service areas</a></span>
     </div>
   </div>
 </footer>
+
+<a class="messenger-fab" href="https://www.facebook.com/PremiumKitchenEquip/" target="_blank" rel="noopener noreferrer" aria-label="Message us on Facebook">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</a>
+
 
 <script src="js/main.js"></script>
 </body>

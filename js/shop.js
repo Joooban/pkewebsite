@@ -10,6 +10,7 @@
     card.dataset.order = i;
   });
 
+  var categoryBoxes = Array.prototype.slice.call(document.querySelectorAll("[data-filter-category]"));
   var brandBoxes = Array.prototype.slice.call(document.querySelectorAll("[data-filter-brand]"));
   var powerToggles = Array.prototype.slice.call(document.querySelectorAll("[data-filter-power]"));
   var capacityPills = Array.prototype.slice.call(document.querySelectorAll("[data-filter-capacity]"));
@@ -40,6 +41,7 @@
   }
 
   function applyFilters() {
+    var categories = activeValues(categoryBoxes, "filterCategory");
     var brands = activeValues(brandBoxes, "filterBrand");
     var powers = activeValues(powerToggles, "filterPower");
     var caps = activeValues(capacityPills, "filterCapacity");
@@ -51,6 +53,7 @@
       var price = Number(card.dataset.price);
       var matches =
         !isExtra &&
+        (categories.length === 0 || categories.indexOf(card.dataset.category) > -1) &&
         (brands.length === 0 || brands.indexOf(card.dataset.brand) > -1) &&
         (powers.length === 0 || powers.indexOf(card.dataset.power) > -1) &&
         (caps.length === 0 || caps.indexOf(card.dataset.capacity) > -1) &&
@@ -69,6 +72,9 @@
     if (loadMoreBtn) loadMoreBtn.hidden = !remainingExtras;
   }
 
+  categoryBoxes.forEach(function (box) {
+    box.addEventListener("change", applyFilters);
+  });
   brandBoxes.forEach(function (box) {
     box.addEventListener("change", applyFilters);
   });
@@ -94,6 +100,9 @@
   }
 
   function clearAll() {
+    categoryBoxes.forEach(function (box) {
+      box.checked = false;
+    });
     brandBoxes.forEach(function (box) {
       box.checked = false;
     });
@@ -160,6 +169,16 @@
       });
     });
   }
+
+  /* ---------- Pre-filter from a category tile link (?cat=cooking-equipment) ---------- */
+  (function preFilterFromQuery() {
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get("cat");
+    if (!slug) return;
+    var label = slug.replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    var box = categoryBoxes.filter(function (b) { return b.dataset.filterCategory === label; })[0];
+    if (box) box.checked = true;
+  })();
 
   applyFilters();
 })();
